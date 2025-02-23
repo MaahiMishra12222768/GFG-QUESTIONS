@@ -1,0 +1,11 @@
+Largest Element in Array
+
+int largest(vector<int> &arr) {
+        // code here
+        int large = 0;
+        int n = arr.size();
+        for(int i = 0 ; i < n ; i++){
+            large = max(large , arr[i]);
+        }
+        return large ; 
+    }
