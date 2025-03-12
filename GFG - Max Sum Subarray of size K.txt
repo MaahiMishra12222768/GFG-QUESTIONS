@@ -1,0 +1,30 @@
+GFG - Max Sum Subarray of size K
+
+//sliding window approach 
+
+class Solution {
+  public:
+    int maximumSumSubarray(vector<int>& arr, int k) {
+        // code here
+        int leftP = 0;
+        int rightP = 0;
+        int max = 0;
+        int currSum = 0;
+        for(int i =0; i< arr.size(); i++){
+            rightP =i;
+            if(rightP<k){
+               max+=arr[i];
+               currSum+=arr[i];
+            }
+            else{
+              currSum -= arr[leftP];
+              currSum += arr[rightP];
+              if(currSum>max){
+                  max=currSum;
+              }
+              leftP++;
+            }
+        }
+        return max;
+    }
+};
