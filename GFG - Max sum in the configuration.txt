@@ -1,0 +1,20 @@
+GFG - Max sum in the configuration 
+
+class Solution {
+  public:
+    int maxSum(vector<int> &arr) {
+        // Your code here
+        int sum=0,curr=0,ans=0;
+        for(int i=0;i<arr.size();i++){
+            curr+=arr[i]*i;
+            sum+=arr[i];
+        }
+        ans=curr;
+        
+        for(int i=arr.size()-1;i>=0;i--){
+            curr=curr+sum-arr.size()*arr[i];
+            ans=max(ans,curr);
+        }
+        return ans;
+}
+};
