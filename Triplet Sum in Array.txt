@@ -1,0 +1,32 @@
+Triplet Sum in Array
+
+//Time complexity - O(n2)
+//space complexity - O(1)
+
+class Solution {
+  public:
+    bool hasTripletSum(vector<int> &arr, int target) {
+        // Your Code Here
+        sort(arr.begin(), arr.end());
+        
+        for (int i=0; i<arr.size(); i++){
+            int s= i+1;
+            int e= arr.size()-1;
+            while(s<e){
+                int sum= arr[s]+ arr[e] + arr[i];
+                if(sum==target){
+                    return true;
+                }
+                else if(sum> target){
+                    e--;
+                }
+                else{
+                    s++;
+                }
+            }
+            
+        
+        }
+        return false;
+    }
+};
