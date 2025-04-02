@@ -1,0 +1,19 @@
+DECIMAL TO BINARY 
+
+class Solution {
+public:
+    string decToBinary(int n) {
+        // Handle the special case of n = 0
+        if (n == 0) return "0";
+        
+        string binary = "";
+        
+        while (n > 0) {
+            int rem = n % 2;
+            binary = to_string(rem) + binary; // Prepend the remainder
+            n = n / 2; // Divide by 2, not 10
+        }
+        
+        return binary;
+    }
+};
