@@ -1,0 +1,11 @@
+vector<int> displayList(Node *head)
+{
+    //Your code here
+    vector<int> ans ; 
+    Node* temp = head ; 
+    while(temp != NULL){
+        ans.push_back(temp->data);
+        temp = temp ->next;
+    }
+    return ans ; 
+}
