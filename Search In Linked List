@@ -1,0 +1,14 @@
+bool searchLinkedList(Node *head, int x)
+{
+    //Your code here
+    Node* temp = head; 
+    bool ans = false;
+    while(temp !=NULL){
+        if(temp->data == x ){
+            ans = true;
+        }
+            temp = temp -> next ; 
+        
+    }
+    return ans;
+}
