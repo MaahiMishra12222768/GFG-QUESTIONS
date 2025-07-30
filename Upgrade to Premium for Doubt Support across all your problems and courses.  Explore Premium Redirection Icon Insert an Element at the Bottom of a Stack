@@ -1,0 +1,30 @@
+// User function Template for C++
+
+class Solution {
+  public:
+  
+  
+    void solve(stack<int>& st , int ele ){
+        if(st.empty()){
+            st.push(ele);
+            return ; 
+            
+        }
+        
+        int num = st.top();
+        st.pop();
+        solve(st , ele );
+        st.push(num);
+        
+        
+    }
+    
+    
+    stack<int> insertAtBottom(stack<int> st, int x) {
+        //int n = st.size();
+        solve(st , x );
+        return st ; 
+        
+        
+    }
+};
