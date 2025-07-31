@@ -1,0 +1,26 @@
+// User function Template for C++
+
+class Solution {
+  public:
+  
+    void insert_at_bottom(stack<int> &st ,int  ele){
+        if(st.empty()){
+            st.push(ele);
+            return;
+        }
+        int num = st.top();
+        st.pop();
+        insert_at_bottom(st,ele);
+        st.push(num);
+    }
+    void Reverse(stack<int> &st) {
+        if(st.empty()){
+            return ; 
+        }
+        
+        int num = st.top();
+        st.pop();
+        Reverse(st);
+        insert_at_bottom(st, num);
+    }
+};
