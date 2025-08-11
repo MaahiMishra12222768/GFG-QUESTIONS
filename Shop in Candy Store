@@ -1,0 +1,5 @@
+int mn=0, mx=0, n=(prices.size()+k)/(k+1);
+        sort(prices.begin(), prices.end());
+        mn=accumulate(prices.begin(), prices.begin()+n,0);
+        mx=accumulate(prices.end()-n, prices.end(),0);
+        return {mn, mx};
